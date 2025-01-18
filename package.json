@@ -9,5 +9,8 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "description": "A simple backend server."
+  "description": "A simple backend server.",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
