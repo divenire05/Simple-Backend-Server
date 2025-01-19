@@ -2,12 +2,10 @@ const express = require('express')
 const app = express()
 const PORT = 8383
 
-let data = {
-    name: 'james'
-}
+let data = ['vedant']
 
 // Middleware
-app.use(express.json)
+app.use(express.json())
 
 // Type 1 - Website Endpoints
 
@@ -34,8 +32,14 @@ app.get('/api/data', (req, res) => {
 app.post('/api/data', (req, res) => {
     const newEntry = req.body
     console.log(newEntry)
+    data.push(newEntry.name)
     res.sendStatus(201)
 })
 
+app.delete('/api/data', (req, res) => {
+    data.pop()
+    console.log('We deleted the element off the end of the array')
+    res.sendStatus(203)
+})
 
 app.listen(PORT, () => console.log(`Server has started on: ${PORT}`))
