@@ -1,1 +1,1 @@
-# A basic backend server in JavaScript supporting CRUD operations
+# A JavaScript backend server supporting basic CRUD operations
