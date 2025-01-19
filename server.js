@@ -6,6 +6,9 @@ let data = {
     name: 'james'
 }
 
+// Middleware
+app.use(express.json)
+
 // Type 1 - Website Endpoints
 
 app.get('/', (req, res) => {
@@ -30,6 +33,8 @@ app.get('/api/data', (req, res) => {
 
 app.post('/api/data', (req, res) => {
     const newEntry = req.body
+    console.log(newEntry)
+    res.sendStatus(201)
 })
 
 
