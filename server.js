@@ -3,8 +3,7 @@ const app = express()
 const PORT = 8383
 
 app.get('/', (req, res) => {
-    console.log('Yay I hit an endpoint', req.method)
-    res.sendStatus(201)
+    res.send('<h1>this is actually a website (html code)</h1><input/>')
 })
 
 app.get('/dashboard', (req, res) => {
