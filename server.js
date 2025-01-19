@@ -9,7 +9,12 @@ let data = {
 // Type 1 - Website Endpoints
 
 app.get('/', (req, res) => {
-    res.send('<h1>Homepage</h1>')
+    res.send(`
+        <body style="background:pink; color: blue">
+        <h1>DATA:</h1>
+            <p>${JSON.stringify(data)}</p>
+        </body>
+        `)
 })
 
 app.get('/dashboard', (req, res) => {
