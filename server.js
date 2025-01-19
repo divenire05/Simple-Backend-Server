@@ -10,23 +10,31 @@ app.use(express.json())
 // Type 1 - Website Endpoints
 
 app.get('/', (req, res) => {
+    console.log('User requested the home page website')
     res.send(`
         <body style="background:pink; color: blue">
         <h1>DATA:</h1>
             <p>${JSON.stringify(data)}</p>
+            <a href="/dashboard">Dashboard</a>
         </body>
+        <script>console.log('This is my script')</script>
         `)
 })
 
 app.get('/dashboard', (req, res) => {
-    res.send('<h1>Dashboard</h1>')
+    res.send(`
+        <body>
+        <h1>Dashboard</h1>
+        <a href="/">Home</a>
+        </body>
+        `)
 })
 
 // Type 2 - API Endpoints (non visual)
 
 app.get('/api/data', (req, res) => {
     console.log('This one was for data')
-    res.send(data)
+    res.status(599).send(data)
 })
 
 app.post('/api/data', (req, res) => {
